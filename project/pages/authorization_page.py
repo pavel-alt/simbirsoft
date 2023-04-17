@@ -8,8 +8,8 @@ class AuthorizationPage(BasePage):
     check_element_xpath = "//span[contains(@class, 'passp-add-account-page-title')]"
     name = "AuthorizationPage"
     text_field_mail_xpath = '//input[contains(@data-t, "field:input-login")]'
-    text_field_password_xpath = '//input[contains(@data-t, "field:input-passwd")]'  # '//input[@id="passp-field-passwd"]'
-    creds_accept_button_xpath = '//button[@id="passp:sign-in"]'  # '//button[contains(@class, "Button2_type")]'
+    text_field_password_xpath = '//input[contains(@data-t, "field:input-passwd")]'
+    creds_accept_button_xpath = '//button[@id="passp:sign-in"]'
     change_mail_way_button_xpath = "//span[text()='Почта']"
     url = URL_AUTH
 
@@ -30,13 +30,9 @@ class AuthorizationPage(BasePage):
         self.__send_password(password)
 
     def __send_mail(self, mail) -> None:
-        """Вводит почту"""
         self.text_field_mail.send_text(mail)
         self.creds_accept_button.click_on_element()
 
     def __send_password(self, password) -> None:
-        """Вводит пароль"""
         self.text_field_password.send_text(password)
         self.creds_accept_button.click_on_element()
-
-

@@ -20,7 +20,7 @@ class YaDiskPage(BasePage):
     create_dir_button_xpath = '//button[contains(@aria-label, "Папку")]'
     new_dir_name_textfield_xpath = '//input[contains(@text, "Новая папка")]'
     save_file_name_button_xpath = '//button[contains(@class, "confirmation-dialog__button_submit")]'
-    custom_dir_link_xpath = f'//div[contains(@aria-label, "{NAME_TEST_FOLDER_UI}")]/parent::div/parent::div'  # f'//div[contains(@aria-label, {name_folder})]/span'
+    custom_dir_link_xpath = f'//div[contains(@aria-label, "{NAME_TEST_FOLDER_UI}")]/parent::div/parent::div'
     create_doc_button_xpath = '//span[contains(@class, "doc")]/parent::button'
     new_doc_name_textfield_xpath = '//input[contains(@text, "Новый документ")]'
     all_file_xpath = '//div[contains(@class, "items")]//div[contains(@class, "item")]/span[contains(@title, "")]'
@@ -80,10 +80,7 @@ class YaDiskPage(BasePage):
 
     def __name_the_doc(self, name_doc: str) -> None:
         self.new_doc_name_textfield.click_on_element()
-        # sleep(5)
         self.new_doc_name_textfield.send_text(name_doc)
-        # self.new_dir_name_textfield.clear_text_field()
-        # sleep(5)
         self.save_file_name_button.click_on_element()
 
     def get_all_file(self) -> List[WebElement]:

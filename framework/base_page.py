@@ -10,7 +10,7 @@ class BasePage(ABC):
     name = ""
     url = ""
 
-    def __init__(self, driver: Union[webdriver.Chrome]) -> None:
+    def __init__(self, driver: Union[webdriver.Chrome]):
         self.driver = driver
         self.check_element = Button(driver, self.check_element_xpath)
 
@@ -23,9 +23,9 @@ class BasePage(ABC):
         return self.check_element.check_visibility()
 
     def close_page(self) -> None:
-        """ """
+        """Метод закрывает текущую вкладку"""
         self.driver.close()
 
     def switch_to_page(self, page) -> None:
-        """ """
+        """Метод меняет активную вкладку"""
         self.driver.switch_to.window(page)

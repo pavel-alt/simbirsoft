@@ -9,7 +9,7 @@ from selenium.webdriver.remote.webelement import WebElement
 class BaseElement(ABC):
     name = ""
 
-    def __init__(self, driver: Union[webdriver.Chrome], xpath) -> None:
+    def __init__(self, driver: Union[webdriver.Chrome], xpath):
         self.driver = driver
         self.xpath = xpath
 

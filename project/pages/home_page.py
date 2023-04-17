@@ -8,7 +8,7 @@ class HomePage(BasePage):
     check_element_xpath = "//span[contains(@aria-label, 'Логотип Дзен')]"
     name = 'HomePage'
     url = URL_HOME
-    enter_button_xpath = "//button[contains(@aria-label, 'Войти')]"  # класс Button
+    enter_button_xpath = "//button[contains(@aria-label, 'Войти')]"
     enter_yandex_id_link_xpath = "//a[contains(@aria-label, 'Войти через Яндекс ID')]"
 
     def __init__(self, driver):
