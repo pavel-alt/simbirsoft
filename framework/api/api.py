@@ -5,7 +5,7 @@ from requests import Response
 
 
 class API(ABC):
-    """ Base class for API connection """
+    """ Базовый класс для API соединения """
 
     def __init__(self, base_url: str):
         self.url = base_url
